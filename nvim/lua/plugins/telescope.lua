@@ -47,6 +47,7 @@ return {
 
     vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
     vim.keymap.set("n", "<leader>fW", function()
+      -- TODO: filter to just symbols not w/b word
       local word = vim.fn.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end, { desc = "Find Connected Words under cursor" })
